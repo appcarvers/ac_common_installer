@@ -385,7 +385,7 @@ class SocialUserAppPushnotify extends SocialAppItem
 			//send notification for android device.
 			if($type_droid=='Android' && !empty($reg_ids)){
 				//Google cloud messaging GCM-API url
-				$url = 'https://gcm-http.googleapis.com/gcm/send';
+				$url = 'https://fcm.googleapis.com/fcm/send';
 				//Setting headers for gcm service.
 				$headers = array(
 				'Authorization'=>'key='.$server_k,
@@ -396,6 +396,7 @@ class SocialUserAppPushnotify extends SocialAppItem
 				//fields contents what data to be sent.
 				$fields = array(
 				'registration_ids' => $registatoin_ids,
+				'notification' => array( "title" => $message, "body"=>$msg_data['mssge']),
 				'data' => array( "title" => $message,"message" => $msg_data['mssge'] ,"notId"=>$count,"url" => $msg_data['ul'], "body"=>$msg_data['mssge']),
 				); 
 
