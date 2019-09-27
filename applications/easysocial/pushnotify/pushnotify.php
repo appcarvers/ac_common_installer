@@ -359,7 +359,7 @@ class SocialUserAppPushnotify extends SocialAppItem
 					$body['aps'] = array(
 						'alert' => $message,
 						'sound' => 'default',
-						"badge" => $count,
+						"badge" => $count + 1,
 						"url" => $msg_data['ul'],
 					);
 					// Encode the payload as JSON
